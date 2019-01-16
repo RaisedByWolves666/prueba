@@ -16,7 +16,8 @@ class UsuariosMigration extends Migration
         Schema::create('usuario', function (Blueprint $table) {
               $table->increments('id');
                 $table->string('usuario', 25);
-                $table->string('nombre', 50);
+                $table->string('nombre', 25);
+                $table->string('apellidos', 40);
                 $table->integer('telefono');
                 $table->string('email')->unique();
                 $table->timestamp('email_verified_at')->nullable();
