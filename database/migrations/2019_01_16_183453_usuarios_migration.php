@@ -17,7 +17,7 @@ class UsuariosMigration extends Migration
               $table->increments('id');
                 $table->string('usuario', 25);
                 $table->string('nombre', 50);
-                $table->int('telefono');
+                $table->integer('telefono');
                 $table->string('email')->unique();
                 $table->timestamp('email_verified_at')->nullable();
                 $table->rememberToken();
