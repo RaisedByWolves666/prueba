@@ -47,7 +47,7 @@
 							<div class="form-group row">
 								<label for="telefono" class="col-sm-2 col-form-label">Telefono</label>
 								<div class="col-sm-10">	
-								<input type="tel" name="telefono" class="form-control" pattern= "[0-9]" title="Solo numeros" id="telefono" placeholder="Telefono" maxlength="9" required>
+								<input type="tel" name="telefono" class="form-control" pattern= "^(([0-9]*)|(([0-9]*)\.([0-9]*)))$" title="Solo numeros" id="telefono" placeholder="Telefono" maxlength="9" required>
 								</div>
 							</div>
 
