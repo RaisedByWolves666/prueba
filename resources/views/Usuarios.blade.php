@@ -47,7 +47,7 @@
 							<div class="form-group row">
 								<label for="telefono" class="col-sm-2 col-form-label">Telefono</label>
 								<div class="col-sm-10">	
-								<input type="tel" name="telefono" class="form-control" id="telefono" placeholder="Telefono" maxlength="9" required>
+								<input type="tel" name="telefono" class="form-control" pattern= "[0-9]" title="Solo numeros" id="telefono" placeholder="Telefono" maxlength="9" required>
 								</div>
 							</div>
 
@@ -55,7 +55,7 @@
 							<div class="form-group row">
 								<label for="email" class="col-sm-2 col-form-label">Email</label>
 								<div class="col-sm-10">
-								<input type="email" name="email" class="form-control" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"  placeholder="Email" required >
+								<input type="email" name="email" class="form-control" id="email" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"  placeholder="Email" required >
 								</div>
 							</div>
 
