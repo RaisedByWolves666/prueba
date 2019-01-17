@@ -19,9 +19,25 @@ class UsuariosController extends Controller
         
     }
 
+
+
     public function store(Request $request)
     {
-    	
+
+    	/* $validatedData = $request->validate([
+        'email' => 'required|unique:usuarios|max:50',
+        ]);*/
+
+        $rules = [
+        'email' => 'required|unique:usuarios|max:50',
+    ];
+
+    $customMessages = [
+        'unique' => 'El :attribute ya existe.'
+    ];
+
+    $this->validate($request, $rules, $customMessages);
+
         $usuario = new Usuarios([
             'usuario' => $request->input('usuario'),
             'nombre' => $request->input('nombre'), 

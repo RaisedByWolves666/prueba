@@ -17,8 +17,6 @@
     						<h1>Registrarse</h1>
   						</div>
 						
-						
-
 						<form action="{{ url('/Creado') }}" method="POST">
 							@csrf
 							
@@ -65,14 +63,12 @@
 							</div>
 						</form>
 
-						@if (count($errors) > 0)
+
+						@if ($errors->any())
 							<div class="alert alert-danger row justify-content-center centered">
 								<ul>
 									@foreach ($errors->all() as $error)
-
-									<li>
-										{{$errors}}
-									</li>
+										<li>{{$error}}</li>
 									@endforeach
 								</ul>
 							</div>
@@ -83,6 +79,7 @@
 								<p>{{\Session::get('Registrado')}}</p>
 							</div>
 						@endif
+						
 					  	
 				</div>		
 			</div>
