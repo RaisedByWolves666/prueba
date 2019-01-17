@@ -32,7 +32,7 @@ class UsuariosController extends Controller
         
         $usuario->save();
 
-        return redirect()->route('/')->with('Registrado', 'cliente registrado');
+        return redirect('/')->with('Registrado', 'Cliente registrado');
 }
     
 }

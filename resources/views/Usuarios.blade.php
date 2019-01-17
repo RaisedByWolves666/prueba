@@ -17,24 +17,7 @@
     						<h1>Registrarse</h1>
   						</div>
 						
-						@if (count($errors) >0)
-							<div class="alert alert-danger">
-								<ul>
-									@foreach ($errors->all() as $error)
-
-									<li>
-										{{$errors}}
-									</li>
-									@endforeach
-								</ul>
-							</div>
-							{{-- expr --}}
-						@endif
-
-						@if (\Session::has('Registrado'))
-							{{-- expr --}}
-							<p>{{\Session::get('Registrado')}}</p>
-						@endif
+						
 
 						<form action="{{ url('/Creado') }}" method="POST">
 							@csrf
@@ -81,6 +64,25 @@
 								<input type="submit" name="Registrarse" class="btn btn-outline-primary">
 							</div>
 						</form>
+
+						@if (count($errors) > 0)
+							<div class="alert alert-danger row justify-content-center centered">
+								<ul>
+									@foreach ($errors->all() as $error)
+
+									<li>
+										{{$errors}}
+									</li>
+									@endforeach
+								</ul>
+							</div>
+						@endif
+
+						@if (\Session::has('Registrado'))
+							<div class="alert alert-success row justify-content-center centered">
+								<p>{{\Session::get('Registrado')}}</p>
+							</div>
+						@endif
 					  	
 				</div>		
 			</div>
