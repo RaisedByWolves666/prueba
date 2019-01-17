@@ -13,11 +13,10 @@ class UsuariosMigration extends Migration
      */
     public function up()
     {
-        Schema::create('usuario', function (Blueprint $table) {
-              $table->increments('id');
+        Schema::create('usuarios', function (Blueprint $table) {
                 $table->string('usuario', 25);
                 $table->string('nombre', 25);
-                $table->string('apellidos', 40);
+                $table->string('apellidos', 20);
                 $table->integer('telefono');
                 $table->string('email')->unique();
                 $table->timestamps();
@@ -31,6 +30,6 @@ class UsuariosMigration extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('usuario');
+        Schema::dropIfExists('usuarios');
     }
 }

@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('Usuarios');
 });
+
+Route::get('/Creado', function() {
+    //
+    return view ('Creado');
+});
+
+Route::post('/Creado','UsuariosController@store');
+

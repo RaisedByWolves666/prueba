@@ -10,29 +10,53 @@
 	</head>
 	<body>
 		<div class="container">
-			<div class="row justify-content-center">
+			<div class=" d-flex row justify-content-center align-items-center container">
 				<div class="col-md-5">
-					<h1>Registro de Usuarios</h1>
-						<form action="" method="POST">
+						
+  						<div class="row justify-content-center">
+    						<h1>Registrarse</h1>
+  						</div>
+						
+						@if (count($errors) >0)
+							<div class="alert alert-danger">
+								<ul>
+									@foreach ($errors->all() as $error)
+
+									<li>
+										{{$errors}}
+									</li>
+									@endforeach
+								</ul>
+							</div>
+							{{-- expr --}}
+						@endif
+
+						@if (\Session::has('Registrado'))
+							{{-- expr --}}
+							<p>{{\Session::get('Registrado')}}</p>
+						@endif
+
+						<form action="{{ url('/Creado') }}" method="POST">
+							@csrf
 							
 							<div class="form-group row">
 								<label for="usuario" class="col-sm-2 col-form-label">Usuario</label>
 									<div class="col-sm-10">
-										<input type="text" name="usuario" class="form-control" id="usuario" placeholder="Usuario" maxlength="16" required >
+										<input type="text" name="usuario" class="form-control" id="usuario" placeholder="Usuario" maxlength="25" required >
 									</div>
 							</div>
 
   								<div class="form-group row">
     								<label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
     								<div class="col-sm-10">
-      									<input type="text" class="form-control" id="nombre" placeholder="Nombre" maxlength="20" required>
+      									<input type="text" name="nombre" class="form-control" id="nombre" placeholder="Nombre" maxlength="25" required>
     								</div>
   								</div>
 
 								<div class="form-group row">
     								<label for="Apellidos" class="col-sm-2 col-form-label">Apellidos</label>
     								<div class="col-sm-10">
-      									<input type="text" class="form-control" id="Apellidos" placeholder="Apellidos" maxlength="20" required>
+      									<input type="text" name="apellidos" class="form-control" id="Apellidos" placeholder="Apellidos" maxlength="20" required>
     								</div>
   								</div>
   							
@@ -48,13 +72,13 @@
 							<div class="form-group row">
 								<label for="email" class="col-sm-2 col-form-label">Email</label>
 								<div class="col-sm-10">
-								<input type="email" name="email" class="form-control" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"  placeholder="Usuario@example.com" required >
+								<input type="email" name="email" class="form-control" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"  placeholder="Email" required >
 								</div>
 							</div>
 
 
 							<div class="form-group">
-								<input type="submit" name="Registrarse" class="btn btn-primary">
+								<input type="submit" name="Registrarse" class="btn btn-outline-primary">
 							</div>
 						</form>
 					  	
